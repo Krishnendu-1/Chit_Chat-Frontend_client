@@ -12,15 +12,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Image from 'react-bootstrap/Image';
-import { endpoint } from '../../../imp';
 
 function Chatting(){
   const [messages,setMessages]=useState([])
-
+const endpoint='https://chitchat-backend-server.onrender.com';
   const [id,setId]=useState('');
   const sendmessage=()=>{
 
-    // if(messages){
     const socket= io(endpoint, { transports: ['websocket'] });//*⭐⭐⭐⭐because outside it'll run for once and onchange in useeffect will run again , causing to print logs 2 times. here it will run onchange in the function only⭐
     const message=document.getElementById('senduser').value;
 
