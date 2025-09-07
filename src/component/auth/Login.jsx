@@ -17,7 +17,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     try {
       const response = await fetch('https://chitchat-backend-server.onrender.com/login', {
         method: 'POST',
